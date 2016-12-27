@@ -305,6 +305,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; Setting PATH env variable and dexec-path here to enable finding of Tern binary
+  (setenv "PATH" (concat (getenv "PATH") ":/home/marc/.nvm/versions/node/v6.5.0/bin"))
+  (setq exec-path (append exec-path '("/home/marc/.nvm/versions/node/v6.5.0/bin")))
+
   )
 
 (defun dotspacemacs/user-config ()
