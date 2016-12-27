@@ -38,19 +38,25 @@ values."
      ;; ----------------------------------------------------------------
      helm
      html
-     ;; auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip t
+                      ;; auto-completion-enable-snippets-in-popup t
+                      )
      ;; better-defaults
      emacs-lisp
      git
-     javascript
+     (javascript
+      :packages (company-tern js-doc js2-mode json-mode json-snatcher tern))
      markdown
      (org :variables
           org-enable-bootstrap-support t)
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom
+            shell-default-shell 'eshell
+            shell-default-term-shell "/bin/bash")
+     spell-checking
+     syntax-checking
      version-control
      )
    ;; List of additional packages that will be installed without being
