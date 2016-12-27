@@ -333,6 +333,17 @@ you should place your code here."
   ;; neotree
   (neotree-show)
 
+  ;; autocomplete
+  (global-company-mode t)
+
+  ;; js2-mode
+  (setq js2-highlight-level 3)
+  (setq js2-indent-switch-body t)
+  (setq js2-basic-offset 2)
+  ;;(setq js2-mode-indent-inhibit-undo nil)
+  ;; (add-hook 'js2-mode-hook '(lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
+  (add-hook 'js2-mode-hook 'js2-mode-hide-warnings-and-errors)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
