@@ -38,15 +38,13 @@ values."
      ;; ----------------------------------------------------------------
      helm
      html
-     (auto-completion :variables
-                      auto-completion-enable-help-tooltip t
-                      ;; auto-completion-enable-snippets-in-popup t
-                      )
+     auto-completion
      ;; better-defaults
      emacs-lisp
      git
      (javascript
-      :packages (company-tern js-doc js2-mode json-mode json-snatcher tern))
+      :packages (company-tern js-doc js2-mode json-mode json-snatcher tern)
+      :variables tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern"))
      markdown
      (org :variables
           org-enable-bootstrap-support t)
