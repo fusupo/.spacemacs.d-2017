@@ -341,7 +341,8 @@ you should place your code here."
   ;;(setq js2-mode-indent-inhibit-undo nil)
   ;; (add-hook 'js2-mode-hook '(lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
   (add-hook 'js2-mode-hook 'js2-mode-hide-warnings-and-errors)
-
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
