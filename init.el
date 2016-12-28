@@ -396,3 +396,17 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; (set-face-attribute 'neo-root-dir-face
+;;                     nil
+;;                     :background "#0c2938"
+;;                     :foreground "#ffd746")
+;; (set-face-attribute 'neo-dir-link-face
+;;                     nil
+;;                     :foreground "DeepSkyBlue"
+;;                     :weight 'bold)
+;; (set-face-attribute 'neo-vc-default-face
+;;                     nil
+;;                     :background "gray20"
+;;                     :foreground "White"
+;;                     :weight 'bold)
