@@ -39,7 +39,6 @@ values."
      helm
      html
      auto-completion
-     ;; better-defaults
      emacs-lisp
      git
      (javascript
