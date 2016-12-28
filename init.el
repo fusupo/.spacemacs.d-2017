@@ -346,6 +346,21 @@ you should place your code here."
   ;;(add-hook 'Custom-mode-hook (lambda () (turn-off-fci-mode)))
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  neotree
+  (setq neo-create-file-auto-open t)
+  (setq neo-modern-sidebar t)
+  (setq neo-show-hidden-files t)
+  (setq neo-smart-open t)
+  (setq neo-theme (quote nerd))
+  (setq neo-vc-integration (quote (face char)))
+  (setq neo-persist-show t)
+  (setq neo-show-updir-line t)
+  ;; (setq neo-window-width 25)
+  ;; (add-hook 'neotree-mode-hook
+  ;;           (lambda ()
+  ;;             (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+  ;;             (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+  ;;             (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+  ;;             (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
   (neotree-show)
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  company
