@@ -325,21 +325,33 @@ you should place your code here."
 
   (setq-default evil-escape-key-sequence "jk")
 
-  ;; automatic symbol highlight
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  automatic symbol highlight
   ;; (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   ;; (add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
-  ;; indentation
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  ind ntation
   (indent-guide-global-mode)
   (setq js-indent-level 2) ;; indendet JSON 2 spaces
 
-  ;; neotree
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  fill column indicator
+  (setq-default fill-column 80)
+  (setq fci-rule-column 80)
+  (setq fci-rule-width 1)
+  (setq fci-rule-use-dashes t)
+  (setq fci-dash-pattern 0.25)
+  (setq fci-rule-color "DeepSkyBlue4")
+  (add-hook 'emacs-lisp-mode-hook 'turn-on-fci-mode)
+  ;;(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  ;;(global-fci-mode 1)
+  ;;(add-hook 'Custom-mode-hook (lambda () (turn-off-fci-mode)))
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  neotree
   (neotree-show)
 
-  ;; autocomplete
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  company
   (global-company-mode t)
 
-  ;; js2-mode
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  js2-mode
   (setq js2-highlight-level 3)
   (setq js2-indent-switch-body t)
   (setq js2-basic-offset 2)
@@ -348,6 +360,8 @@ you should place your code here."
   (add-hook 'js2-mode-hook 'js2-mode-hide-warnings-and-errors)
   (add-hook 'js2-mode-hook 'flycheck-mode)
   (add-hook 'js2-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
+  (add-hook 'js2-mode-hook 'turn-on-fci-mode)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
