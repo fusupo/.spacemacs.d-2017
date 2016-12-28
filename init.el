@@ -322,10 +322,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
   (setq-default evil-escape-key-sequence "jk")
 
   ;; automatic symbol highlight
-  (add-hook 'js2-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   ;; (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   ;; (add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
@@ -347,7 +347,7 @@ you should place your code here."
   ;; (add-hook 'js2-mode-hook '(lambda () (local-set-key (kbd "RET") 'newline-and-indent)))
   (add-hook 'js2-mode-hook 'js2-mode-hide-warnings-and-errors)
   (add-hook 'js2-mode-hook 'flycheck-mode)
-  
+  (add-hook 'js2-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
