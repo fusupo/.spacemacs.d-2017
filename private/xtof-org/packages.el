@@ -709,6 +709,7 @@
 
                    ;;(setq org-archive-location "~/Dropbox/org/archive/%s_archive::")
                    ;; look & feel
+                   (setq org-bullets-bullet-list '("੦" "⌾◆⊕" "⏺∴" "▶" "∘" "∙" "☉"))
                    (setq org-src-fontify-natively t)
                    ;;(setq org-tags-column -136)
                    (setq org-tags-column -80)
