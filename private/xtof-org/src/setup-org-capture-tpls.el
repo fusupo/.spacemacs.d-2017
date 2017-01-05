@@ -86,41 +86,41 @@
 (setq org-capture-templates
       `(("p" 
          "project" 
-         entry (file "~/dropbox/org/projects.org") 
+         entry (file "~/Dropbox/org/projects.org") 
          ,xtof/org-capture-project-template)
         ("t"
          "task"
-         entry (file+headline "~/dropbox/org/inbox.org" "tasks")
+         entry (file+headline "~/Dropbox/org/inbox.org" "tasks")
          ,xtof/org-capture-task-template)
         ("h"
          "habit"
-         entry (file+headline "~/dropbox/org/inbox.org" "tasks")
+         entry (file+headline "~/Dropbox/org/inbox.org" "tasks")
          ,xtof/org-capture-habit-template)
         ("m"
          "memo" 
-         entry (file+datetree "~/dropbox/org/memos.org") 
+         entry (file+datetree "~/Dropbox/org/memos.org") 
          ,xtof/org-capture-memo-template)
         ("n"
          "note"
-         entry (file+headline "~/dropbox/org/notes.org" "notes")
+         entry (file+headline "~/Dropbox/org/notes.org" "notes")
          ,xtof/org-capture-note-template)
         ;;
         ("l" "logs")
         ("la" 
          "activity log entry" 
-         entry (file+datetree "~/dropbox/org/activity_log.org") 
+         entry (file+datetree "~/Dropbox/org/activity_log.org") 
          ,xtof/org-capture-activity-log-template)
         ("ld" 
          "dream log entry" 
-         entry (file+datetree "~/dropbox/org/dream_log.org") 
+         entry (file+datetree "~/Dropbox/org/dream_log.org") 
          ,xtof/org-capture-dream-log-template)
         ("lm" 
          "meditation log entry" 
-         entry (file+datetree "~/dropbox/org/meditation_log.org") 
+         entry (file+datetree "~/Dropbox/org/meditation_log.org") 
          ,xtof/org-capture-meditation-log-template)
         ;; ("lt" 
         ;;  "tga log entry" 
-        ;;  entry (file+datetree "~/dropbox/org/tga_log.org") 
+        ;;  entry (file+datetree "~/Dropbox/org/tga_log.org") 
         ;;  ,xtof/org-capture-tga-log-template)
         )
       )
