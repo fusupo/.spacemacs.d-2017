@@ -40,6 +40,7 @@ values."
      html
      auto-completion
      emacs-lisp
+     finance
      git
      (javascript
       :variables tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern")
