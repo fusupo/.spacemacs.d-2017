@@ -44,7 +44,6 @@ values."
      git
      (javascript
       :variables tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern")
-      :packages (company-tern js-doc js2-mode json-mode json-snatcher tern)
       )
      markdown
      (org :variables
