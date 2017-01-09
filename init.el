@@ -346,10 +346,11 @@ you should place your code here."
   (setq fci-rule-use-dashes t)
   (setq fci-dash-pattern 0.25)
   (setq fci-rule-color "DeepSkyBlue4")
-  (add-hook 'emacs-lisp-mode-hook 'turn-on-fci-mode)
-  ;;(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  ;;(global-fci-mode 1)
-  ;;(add-hook 'Custom-mode-hook (lambda () (turn-off-fci-mode)))
+  ;(add-hook 'emacs-lisp-mode-hook 'turn-on-fci-mode)
+
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  (global-fci-mode)
+  (add-hook 'Custom-mode-hook (lambda () (turn-off-fci-mode)))
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  neotree
