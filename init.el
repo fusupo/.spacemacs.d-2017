@@ -400,6 +400,18 @@ you should place your code here."
   (add-hook 'js2-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   (add-hook 'js2-mode-hook 'turn-on-fci-mode)
 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  spell-checking 
+  (add-hook 'org-mode-hook 'spacemacs/toggle-spelling-checking-on)
+  (add-hook 'js2-mode-hook 'spacemacs/toggle-spelling-checking-off)
+  ;;(add-hook 'clojure-mode-hook 'spacemacs/toggle-spelling-checking-off)
+  (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-spelling-checking-off)
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  automatic symbol highlight
+  (add-hook 'js2-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
+  (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
+  ;;(add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
