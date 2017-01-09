@@ -19,7 +19,6 @@
         org
         org-ac
         org-gcal
-        ;;neotree
         ))
 
 ;; List of packages to exclude.
