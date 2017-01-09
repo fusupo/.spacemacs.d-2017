@@ -615,53 +615,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  CAPTURE
 
 ;;(defun xtof/org-capture-setup ()
-
-
-;; (defun xtof-org/pre-init-neotree ()
-;;   (spacemacs|use-package-add-hook neotree 
-;;     :pre-init
-;;     ;; Code
-;;     :post-init
-;;     ;; Code
-;;     :pre-config
-;;     ;; Code
-;;     :post-config
-;;     ;; Code
-;;     (progn
-;;       (print "INIT NEOTREE")
-;;       (setq neo-create-file-auto-open t)
-;;       (setq neo-modern-sidebar t)
-;;       (setq neo-show-hidden-files t)
-;;       (setq neo-smart-open t)
-;;       (setq neo-theme (quote nerd))
-;;       (setq neo-vc-integration (quote (face char)))
-;;       (set-face-attribute 'neo-root-dir-face
-;;                           nil
-;;                           :background "#0c2938"
-;;                           :foreground "#ffd746")
-;;       (set-face-attribute 'neo-dir-link-face
-;;                           nil
-;;                           :foreground "DeepSkyBlue"
-;;                           :weight 'bold)
-;;       (set-face-attribute 'neo-vc-default-face
-;;                           nil
-;;                           :background "gray20"
-;;                           :foreground "White"
-;;                           :weight 'bold)
-;;       (setq neo-persist-show t)
-;;       (setq neo-show-updir-line t)
-;;       ;; (setq neo-window-width 25)
-;;       ;; (add-hook 'neotree-mode-hook
-;;       ;;           (lambda ()
-;;       ;;             (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
-;;       ;;             (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
-;;       ;;             (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
-;;       ;;             (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
-;;       (neotree-show)
-;;       )
-;;     )
-;;   )
-
 (defun xtof-org/pre-init-org ()
   (spacemacs|use-package-add-hook org
     ;;   ;;:pre-init
