@@ -1,5 +1,3 @@
-(print "LOAD MUTHERFUCKING ORG HABIT TPL DEF.EL, SUCKAH!!")
-
 (defun xtof/create-recurring-timestamp ()
   "foo"
   (interactive)
@@ -15,64 +13,62 @@
             (cond ((string= "" recurrence-rate-min) (concat recurrence-rate-max recurrence-interval))
                   (t (concat recurrence-rate-min recurrence-interval "/" recurrence-rate-max recurrence-interval))))))
 
-(defvar
-  xtof/org-capture-project-template
+(defvar xtof/org-capture-project-template
   "* PROJ %^{Project} :PROJ:
-  %?")
+   %?")
 
-(defvar
-  xtof/org-capture-task-template
+(defvar xtof/org-capture-task-template
   "* TODO %^{Task} %^G
-      :PROPERTIES:
-      :CREATED: %U
-      :Effort: %^{effort|1:00|0:05|0:15|0:30|2:00|3:00|4:00}
-      :END:
-      %?")
+   :PROPERTIES:
+   :CREATED: %U
+   :Effort: %^{effort|1:00|0:05|0:15|0:30|2:00|3:00|4:00}
+   :END:
+   %?")
 
 (defvar xtof/org-capture-habit-template
   "* TODO %^{Habit}  
-  SCHEDULED: %(xtof/create-recurring-timestamp)
-  :PROPERTIES:
-  :STYLE: habit
-  :Effort: %^{effort|1:00|0:05|0:15|0:30|2:00|3:00|4:00}
-  :END:
-  OPENED: %U
-  %?
-  %i")
+   SCHEDULED: %(xtof/create-recurring-timestamp)
+   :PROPERTIES:
+   :STYLE: habit
+   :Effort: %^{effort|1:00|0:05|0:15|0:30|2:00|3:00|4:00}
+   :END:
+   OPENED: %U
+   %?
+   %i")
 
 (defvar xtof/org-capture-memo-template
   "* %^{Subject} 
-  :PROPERTIES:
-  :TO: %^{to|Self}
-  :DATE: %U
-  :END:
-  %?")
+   :PROPERTIES:
+   :TO: %^{to|Self}
+   :DATE: %U
+   :END:
+   %?")
 
 (defvar xtof/org-capture-note-template
   "* %^{Description} 
-  :PROPERTIES: 
-  :DATE: %U
-  :END:
-  %?")
+   :PROPERTIES: 
+   :DATE: %U
+   :END:
+   %?")
 
 (defvar xtof/org-capture-activity-log-template
   "* %^{Title} 
-  :PROPERTIES:
-  :DATE: %U
-  :END:
-  %?")
+   :PROPERTIES:
+   :DATE: %U
+   :END:
+   %?")
 
 (defvar xtof/org-capture-dream-log-template
   "* %^{Title} 
-  %?")
+   %?")
 
 (defvar xtof/org-capture-meditation-log-template
   "* %^{Title}
-  :PROPERTIES:
-  :STARTTIME: %^{start time}U
-  :DURATION: %^{duration|0:30}
-  :END:
-  %?")
+   :PROPERTIES:
+   :STARTTIME: %^{start time}U
+   :DURATION: %^{duration|0:30}
+   :END:
+   %?")
 
 ;; (defvar
 ;;   xtof/org-capture-tga-log-template
