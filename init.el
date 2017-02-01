@@ -57,7 +57,7 @@ values."
             shell-default-position 'bottom
             shell-default-shell 'eshell
             shell-default-term-shell "/bin/bash")
-     spell-checking
+     ( spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
      themes-megapack
      version-control
