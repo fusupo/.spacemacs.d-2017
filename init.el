@@ -47,8 +47,7 @@ values."
      finance
      git
      (javascript :variables
-                 tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern")
-      )
+                 tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern"))
      markdown
      (org :variables
           org-enable-bootstrap-support t)
@@ -57,7 +56,8 @@ values."
             shell-default-position 'bottom
             shell-default-shell 'eshell
             shell-default-term-shell "/bin/bash")
-     (spell-checking :variables spell-checking-enable-by-default nil)
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil)
      syntax-checking
      themes-megapack
      version-control
