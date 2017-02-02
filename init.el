@@ -46,8 +46,8 @@ values."
      emacs-lisp
      finance
      git
-     (javascript
-      :variables tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern")
+     (javascript :variables
+                 tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern")
       )
      markdown
      (org :variables
@@ -57,7 +57,7 @@ values."
             shell-default-position 'bottom
             shell-default-shell 'eshell
             shell-default-term-shell "/bin/bash")
-     ( spell-checking :variables spell-checking-enable-by-default nil)
+     (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
      themes-megapack
      version-control
@@ -140,8 +140,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(
-                         birds-of-paradise-plus
+   dotspacemacs-themes '(birds-of-paradise-plus
                          spacemacs-dark
                          spacemacs-light
                          jazz
