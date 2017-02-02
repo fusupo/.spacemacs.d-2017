@@ -332,12 +332,29 @@ you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  org-babel
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((css . t)
+     (clojure . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . t)
+     (js . t)
+     (org . t)
+     (python . t)
+     (ruby . t)
+     (sh . t)
+     (sql . nil)
+     (sqlite . t)))
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  automatic symbol highlight
   ;; (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   ;; (add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  ind ntation
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  indentation
   (indent-guide-global-mode)
   (setq js-indent-level 2) ;; indendet JSON 2 spaces
 
