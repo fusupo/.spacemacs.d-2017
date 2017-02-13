@@ -1,5 +1,4 @@
 (defun xtof/create-recurring-timestamp ()
-  "foo"
   (interactive)
   (let ((fs "%Y-%m-%d %a %H:%M")
         (date (org-read-date nil t nil "input base date"))
@@ -70,6 +69,10 @@
    :END:
    %?")
 
+(defvar xtof/org-capture-bookmark-template
+  "* %^{Title}           %^G
+  %^{Link}")
+
 ;; (defvar
 ;;   xtof/org-capture-tga-log-template
 ;;   "* %^{Title} 
@@ -80,10 +83,14 @@
 ;;   %?")
 
 (setq org-capture-templates
-      `(("p" 
-         "project" 
-         entry (file "~/Dropbox/org/projects.org") 
+      `(("p"
+         "project"
+         entry (file "~/Dropbox/org/projects.org")
          ,xtof/org-capture-project-template)
+        ("b"
+         "bookmark"
+         entry (file "~/Dropbox/org/bookmarks.org")
+         ,xtof/org-capture-bookmark-template)
         ("t"
          "task"
          entry (file+headline "~/Dropbox/org/inbox.org" "tasks")
@@ -93,8 +100,8 @@
          entry (file+headline "~/Dropbox/org/inbox.org" "tasks")
          ,xtof/org-capture-habit-template)
         ("m"
-         "memo" 
-         entry (file+datetree "~/Dropbox/org/memos.org") 
+         "memo"
+         entry (file+datetree "~/Dropbox/org/memos.org")
          ,xtof/org-capture-memo-template)
         ("n"
          "note"
@@ -102,16 +109,16 @@
          ,xtof/org-capture-note-template)
         ;;
         ("l" "logs")
-        ("la" 
-         "activity log entry" 
-         entry (file+datetree "~/Dropbox/org/activity_log.org") 
+        ("la"
+         "activity log entry"
+         entry (file+datetree "~/Dropbox/org/activity_log.org")
          ,xtof/org-capture-activity-log-template)
-        ("ld" 
-         "dream log entry" 
-         entry (file+datetree "~/Dropbox/org/dream_log.org") 
+        ("ld"
+         "dream log entry"
+         entry (file+datetree "~/Dropbox/org/dream_log.org")
          ,xtof/org-capture-dream-log-template)
-        ("lm" 
-         "meditation log entry" 
+        ("lm"
+         "meditation log entry"
          entry (file+datetree "~/Dropbox/org/meditation_log.org") 
          ,xtof/org-capture-meditation-log-template)
         ;; ("lt" 
