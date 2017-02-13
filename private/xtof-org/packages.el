@@ -35,17 +35,6 @@
             (print "load org ac")
             (org-ac/config-default))))
 
-(defun xtof-org/init-org-gcal ()
-  "Initialize my package"
-  (use-package org-gcal
-    :ensure t
-    :defer t
-    :init (progn
-            (setq org-gcal-client-id "48123994321-7klbgee36rhkn3ampe5muc3b27ajc6nu.apps.googleusercontent.com"
-                  org-gcal-client-secret "aAFC94Vp3kVdhi2O6AOK13pf"
-                  org-gcal-file-alist '(("marc@telegraphacademy.com" .  "~/Dropbox/org/schedule.org")
-                                        ("fusupo@gmail.com" .  "~/Dropbox/org/scheduleToo.org")))
-            )))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Often the body of an initialize function uses `use-package'
