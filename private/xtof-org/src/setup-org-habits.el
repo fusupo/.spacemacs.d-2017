@@ -1,7 +1,0 @@
-(defun xtof/org-habit-setup ()
-  (setq org-habit-graph-column 80)
-  (setq org-habit-show-habits-only-for-today t)
-  (setq org-habit-show-all-today t)
-  (setq org-habit-completed-glyph 8226)
-  (setq org-habit-today-glyph 124)
-  (setq org-habit-following-days 14))
