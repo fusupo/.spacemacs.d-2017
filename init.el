@@ -448,32 +448,51 @@ you should place your code here."
   (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
   ;;(add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  org-caldav
-  (require 'org-caldav)
+  ;; (require 'org-caldav)
 
-  ;; Insert your own username on the second line, I think you need to add
-  ;; the domain if it isn't mykolab.com, e.g. "foobar@mykolab.ch".
-  (setq org-caldav-url "https://71.198.78.58/remote.php/dav/calendars/marc")
+  ;; ;; Insert your own username on the second line, I think you need to add
+  ;; ;; the domain if it isn't mykolab.com, e.g. "foobar@mykolab.ch".
+  ;; (setq org-caldav-url "https://71.198.78.58/remote.php/dav/calendars/marc")
 
-  ;; The name of your calendar, typically "Calendar" or similar
-  (setq org-caldav-calendar-id "personalii")
+  ;; ;; The name of your calendar, typically "Calendar" or similar
+  ;; (setq org-caldav-calendar-id "personalii")
 
-  ;; Local file that gets events added on the phone
-  (setq org-caldav-inbox "~/Nextcloud/data/org/caltest.org")
+  ;; ;; Local file that gets events added on the phone
+  ;; (setq org-caldav-inbox "~/Nextcloud/data/org/caltest.org")
 
-  ;; List of your org files here
-  (setq org-caldav-files
-        '( "~/Dropbox/org/Untitled.org"
-        "~/Dropbox/org/archive.org"
-        "~/Dropbox/org/inbox.org"
-        "~/Dropbox/org/js2017.org"
-        "~/Dropbox/org/notes.org"
-        "~/Dropbox/org/projects.org" ))
+  ;; ;; List of your org files here
+  ;; (setq org-caldav-files
+  ;;       '( "~/Dropbox/org/Untitled.org"
+  ;;       "~/Dropbox/org/archive.org"
+  ;;       "~/Dropbox/org/inbox.org"
+  ;;       "~/Dropbox/org/js2017.org"
+  ;;       "~/Dropbox/org/notes.org"
+  ;;       "~/Dropbox/org/projects.org" ))
 
-  ;; This is the tricky part - I needed this to get the time zone right
-  ;; (setq org-icalendar-timezone "Europe/Helsinki")
-  ;; (setq org-icalendar-date-time-format ";TZID=%Z:%Y%m%dT%H%M%S")
+  ;; ;; This is the tricky part - I needed this to get the time zone right
+  ;; ;; (setq org-icalendar-timezone "Europe/Helsinki")
+  ;; ;; (setq org-icalendar-date-time-format ";TZID=%Z:%Y%m%dT%H%M%S")
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  multi-term
+  ;; (defun init-term-settings ()
+  ;;   ;; Normally we maintain a margin of N lines between the cursor and the edge of the window, but in term mode,
+  ;;   ;; the cursor should always be at the bottom of the window.
+  ;;   (setq-local scroll-margin 0)
+  ;;   (setq-local scroll-conservatively 0)
+  ;;   (setq-local scroll-step 1)
+  ;;   ;; (setq-local fringes-outside-margins t)
+  ;;   ;; (setq-local left-margin-width 20)
+  ;;   ;; (setq-local right-margin-width 20)
+  ;;   (setq left-fringe-width 0)
+  ;;   (setq right-fringe-width 0)
+  ;;   ;;(set-window-buffer)
+  ;;   ;;(fringe-mode 1)
+  ;;   )
+  ;; (add-hook 'term-mode-hook 'init-term-settings)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
