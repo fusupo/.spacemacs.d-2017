@@ -58,8 +58,8 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'eshell
-            shell-default-term-shell "/bin/bash")
+            shell-default-shell 'multi-term
+            shell-default-term-shell "/bin/zsh")
      (spell-checking :variables
                      spell-checking-enable-by-default nil)
      syntax-checking
