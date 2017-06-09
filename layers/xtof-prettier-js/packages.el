@@ -74,4 +74,11 @@ Each entry is either:
   
   (add-hook 'react-mode-hook
             (lambda ()
-              (add-hook 'before-save-hook 'prettier nil 'make-it-local))))
+              (add-hook 'before-save-hook 'prettier nil 'make-it-local)))
+
+  (setq prettier-args '(
+                        "--single-quote" "true"
+                        "--trailing-comma" "none"
+                        "--bracket-spacing" "true"
+                        "--jsx-bracket-same-line" "true"
+                        )))
