@@ -396,6 +396,7 @@ you should place your code here."
   (setq neo-vc-integration (quote (face char)))
   (setq neo-persist-show t)
   (setq neo-show-updir-line t)
+  (setq neo-window-width 24)
   ;; (set-face-attribute 'neo-root-dir-face
   ;;                     nil
   ;;                     :background "#0c2938"
