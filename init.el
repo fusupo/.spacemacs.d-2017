@@ -353,8 +353,10 @@ you should place your code here."
   ;; (add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  indentation
-  (indent-guide-global-mode)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  indentation
+  ;(indent-guide-global-mode)
+  (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-indent-guide-on)
+  (add-hook 'js2-mode-hook 'spacemacs/toggle-indent-guide-on)
   (setq js-indent-level 2) ;; indendet JSON 2 spaces
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
