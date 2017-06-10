@@ -151,16 +151,16 @@
    `(org-todo ((t (:foreground ,red-1 :background ,red-1bg))))
 
    ;; Term
-   `(term-color-black                          ((t (:foreground ,black))))
-   `(term-color-blue                           ((t (:foreground ,blue-1))))
-   `(term-color-cyan                           ((t (:foreground ,blue-1))))
-   `(term-color-green                          ((t (:foreground ,green-1))))
-   `(term-color-magenta                        ((t (:foreground ,purple-1))))
-   `(term-color-red                            ((t (:foreground ,red-1))))
-   `(term-color-white                          ((t (:foreground ,foreground))))
-   `(term-color-yellow                         ((t (:foreground ,yellow))))
-   `(term-default-fg-color                     ((t (:foreground ,foreground))))
-   `(term-default-bg-color                     ((t (:background ,background)))))
+   ;; `(term-color-black                          ((t (:foreground ,black))))
+   ;; `(term-color-blue                           ((t (:foreground ,blue-1))))
+   ;; `(term-color-cyan                           ((t (:foreground ,blue-1))))
+   ;; `(term-color-green                          ((t (:foreground ,green-1))))
+   ;; `(term-color-magenta                        ((t (:foreground ,purple-1))))
+   ;; `(term-color-red                            ((t (:foreground ,red-1))))
+   ;; `(term-color-white                          ((t (:foreground ,foreground))))
+   ;; `(term-color-yellow                         ((t (:foreground ,yellow))))
+   ;; `(term-default-fg-color                     ((t (:foreground ,foreground))))
+   ;; `(term-default-bg-color                     ((t (:background ,background))))
    )
 
   (custom-theme-set-variables
@@ -176,6 +176,7 @@
    ;; `(ansi-term-color-vector
    ;;   ;; black, red, green, yellow, blue, magenta, cyan, white
    ;;   [background ,red-1 ,green-1 ,yellow-1 ,blue-1 ,purple-1 ,blue-1 ,foreground])
+
    )
   )
 

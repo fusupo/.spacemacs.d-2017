@@ -592,21 +592,22 @@
    `(term-color-white                          ((t (:foreground ,xtof-dark-light1))))
    `(term-color-yellow                         ((t (:foreground ,xtof-dark-neutral_yellow))))
    `(term-default-fg-color                     ((t (:foreground ,xtof-dark-light0))))
-   `(term-default-bg-color                     ((t (:background ,xtof-dark-dark0)))))
+   `(term-default-bg-color                     ((t (:background ,xtof-dark-dark0))))
 
-  ;; Elfeed
-  `(elfeed-search-date-face ((t (:foreground ,xtof-dark-dark1))))
-  `(elfeed-search-feed-face ((t (:foreground ,xtof-dark-dark1))))
-  `(elfeed-search-tag-face ((t (:foreground ,xtof-dark-dark0))))
-  `(elfeed-search-title-face ((t (:foreground ,xtof-dark-dark0))))
 
-  `(ahs-definition-face ((t (:background "CadetBlue" :foreground "moccasin"))))
-  `(ahs-face ((t (:background "gray60" :foreground "black"))))
-  `(ahs-plugin-whole-buffer-face ((t (:background "Dark Goldenrod" :foreground "Black"))))
-  `(neo-dir-link-face ((t (:inherit magit-head :weight extra-bold))))
-  `(neo-vc-default-face ((t (:foreground "#7C6F64"))))
-  `(neo-vc-edited-face ((t (:foreground "#DD6F48"))))
-  `(neo-vc-up-to-date-face ((t (:foreground "#FDF4C1"))))
+   ;; Elfeed
+   `(elfeed-search-date-face ((t (:foreground ,xtof-dark-dark1))))
+   `(elfeed-search-feed-face ((t (:foreground ,xtof-dark-dark1))))
+   `(elfeed-search-tag-face ((t (:foreground ,xtof-dark-dark0))))
+   `(elfeed-search-title-face ((t (:foreground ,xtof-dark-dark0))))
+
+   `(ahs-definition-face ((t (:background "CadetBlue" :foreground "moccasin"))))
+   `(ahs-face ((t (:background "gray60" :foreground "black"))))
+   `(ahs-plugin-whole-buffer-face ((t (:background "Dark Goldenrod" :foreground "Black"))))
+   `(neo-dir-link-face ((t (:inherit magit-head :weight extra-bold))))
+   `(neo-vc-default-face ((t (:foreground "#7C6F64"))))
+   `(neo-vc-edited-face ((t (:foreground "#DD6F48"))))
+   `(neo-vc-up-to-date-face ((t (:foreground "#FDF4C1")))))
 
   (custom-theme-set-variables
    'xtof-dark
