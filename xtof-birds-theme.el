@@ -166,11 +166,12 @@
    `(fci-rule-character-color ,brown-1)
 
    ;; Misc.
-   `(ansi-color-names-vector
-     ;; black, red, green, yellow, blue, magenta, cyan, white
-     [,black-1 ,red-2 ,green-1 ,yellow-4 ,blue-3 ,purple-3 ,blue-4 ,white-2])
-   `(ansi-term-color-vector
-     ;; [unspecified "black" "red3" "green3" "yellow3" "blue2" "magenta3" "cyan3" "white"]
-     [unspecified ,black-1 ,red-2 ,green-1 ,yellow-4 ,blue-3 ,purple-3 ,blue-4 ,white-2])))
+   ;; `(ansi-color-names-vector
+   ;;   ;; black, red, green, yellow, blue, magenta, cyan, white
+   ;;   [black-1 ,red-2 ,green-1 ,yellow-4 ,blue-3 ,purple-3 ,blue-4 ,white-2])
+   ;; `(ansi-term-color-vector
+   ;;   ;; [unspecified "black" "red3" "green3" "yellow3" "blue2" "magenta3" "cyan3" "white"]
+   ;;   [black-1 ,red-2 ,green-1 ,yellow-4 ,blue-3 ,purple-3 ,blue-4 ,white-2])
+   ))
 
 (provide-theme 'xtof-birds)

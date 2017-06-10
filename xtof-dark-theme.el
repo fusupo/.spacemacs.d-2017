@@ -614,14 +614,15 @@
    `(pos-tip-foreground-color ,xtof-dark-light0_hard)
    `(pos-tip-background-color ,xtof-dark-dark_aqua)
 
-   `(ansi-color-names-vector ["#3C3836"
-                              "#FB4934"
-                              "#B8BB26"
-                              "#FABD2F"
-                              "#83A598"
-                              "#D3869B"
-                              "#8EC07C"
-                              "#EBDBB2"])))
+   ;; `(ansi-color-names-vector ["#3C3836"
+   ;;                            "#FB4934"
+   ;;                            "#B8BB26"
+   ;;                            "#FABD2F"
+   ;;                            "#83A598"
+   ;;                            "#D3869B"
+   ;;                            "#8EC07C"
+   ;;                            "#EBDBB2"])
+   ))
 
 ;;;###autoload
 (and load-file-name
