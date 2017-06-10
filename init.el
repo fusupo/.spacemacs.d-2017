@@ -466,6 +466,14 @@ you should place your code here."
   ;;   )
   ;; (add-hook 'term-mode-hook 'init-term-settings)
 
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; misc
+  (setq markdown-command "pandoc -f markdown_github")
+  
+  (defun my-doc-view-mode-hook () 
+    (linum-mode 0)) 
+  (add-hook 'doc-view-mode-hook 'my-doc-view-mode-hook)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
