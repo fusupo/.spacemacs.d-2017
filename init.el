@@ -370,6 +370,7 @@ you should place your code here."
   (add-hook 'emacs-lisp-mode-hook 'turn-on-fci-mode)
   (add-hook 'org-mode-hook 'turn-on-fci-mode)
   (add-hook 'js2-mode-hook 'turn-on-fci-mode)
+  (add-hook 'clojure-mode-hook 'turn-on-fci-mode)
 
   (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
   ;(global-fci-mode)
@@ -386,6 +387,14 @@ you should place your code here."
     (when (and (not popup-instances) sanityinc/fci-mode-suppressed)
       (setq sanityinc/fci-mode-suppressed nil)
       (turn-on-fci-mode)))
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; visual-line-mode 
+  (defun my-clojure-visual-line-mode-hook () 
+    (visual-line-mode 0)) 
+
+  (add-hook 'clojure-mode-hook 'my-clojure-visual-line-mode-hook)
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  neotree
   (setq neo-create-file-auto-open t)
