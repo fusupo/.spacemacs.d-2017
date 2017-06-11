@@ -483,6 +483,12 @@ you should place your code here."
     (linum-mode 0)) 
   (add-hook 'doc-view-mode-hook 'my-doc-view-mode-hook)
 
+  ;;;;;;; multiple cursors
+  ;(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  ;(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  ;(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  ;(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
