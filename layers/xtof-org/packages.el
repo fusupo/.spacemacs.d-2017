@@ -722,6 +722,7 @@
                      ;;   )
                      ;; )
                    (load-file "~/.spacemacs.d/layers/xtof-org/src/setup-org-capture-tpls.el")
+                   (load-file "~/.spacemacs.d/layers/xtof-org/src/setup-org-export.el")
                    )
     )
   )
