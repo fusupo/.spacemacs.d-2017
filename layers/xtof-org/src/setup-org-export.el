@@ -1,3 +1,4 @@
+(print "-------- SETUP ORG EXPORT -------")
 (defun xtof/org-export-header-lrg ()
   (concat
    "<header id='header' class='lrg'>"
@@ -9,6 +10,7 @@
    "</header>"))
 
 (defun xtof/org-export-header-sml ()
+  (print "org-export-header-sml")
   (concat
    "<header id='header' class='sml'>"
    "<div>Marc Christophe</div>"
@@ -16,6 +18,7 @@
    "</header>"))
 
 (defun xtof/org-export-preamble (info)
+  (print "org-export-preamble")
   (cond ((string= (car (plist-get info :title)) "index")
          (concat  "<nav id='nav' class='nav-index'>"
                   "<a href= 'about.html '>ABOUT</a>"
@@ -33,10 +36,10 @@
                     "<a href= \'../about.html \'>ABOUT</a>"
                     "</nav>"
                     (xtof/org-export-header-sml)
-                    )))
-  )
+                    ))))
 
 (defun xtof/org-export-disqus-wiget ()
+  (print "org-export-disqus-widget")
   (concat
    "<div id='disqus_thread'></div>"
    "<script>"
@@ -67,6 +70,7 @@
    ))
 
 (defun xtof/org-export-google-analytics-widget ()
+  (print "org-export-google-analytics-widget")
   (concat
    "<script>"
    "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){"
@@ -78,6 +82,7 @@
    "</script>"))
 
 (defun xtof/org-export-footer ()
+  (print "org-export-footer")
   (concat
    "<footer id='footer'>"
    "<p class='small'>© Copyright 2016 Marc Christophe</p>"
@@ -89,6 +94,7 @@
    "</footer>"))
 
 (defun xtof/org-export-postamble (info)
+  (print "org-export-postamble")
   (cond ((string= (car (plist-get info :title)) "index")
          (concat  "<div>"
                   (xtof/org-export-footer)                    
@@ -115,21 +121,18 @@
                     (xtof/org-export-google-analytics-widget)
                     "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js'></script>"
                     "<script type='text/javascript' src='../js/build/bundle.js'></script>"
-                    "</div>")))
-  )
+                    "</div>"))))
 
 (defun xtof/org-export-html-head-extra ()
-  ;; (concat
-  ;;  "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>"
-  ;;  "<link rel='stylesheet' href='style/main.css'>"
-  ;;  ;; "<link rel='shortcut icon' href='http://cdn.sstatic.net/stackoverflow/img/favicon.ico'>"
-  ;;  ;; "<link rel='apple-touch-icon' href='http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png'>"
-  ;;  )
-  ""
-  )
+  (concat
+   "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>"
+   "<link rel='stylesheet' href='style/main.css'>"
+   ;; "<link rel='shortcut icon' href='http://cdn.sstatic.net/stackoverflow/img/favicon.ico'>"
+   ;; "<link rel='apple-touch-icon' href='http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png'>"
+   ))
 
 (setq org-publish-project-alist
-      '(("fusupo.github.io-index"
+      `(("fusupo.github.io-index"
          :base-directory "~/Dropbox/fusupo.github.io/src/"
          :publishing-directory "~/Dropbox/fusupo.github.io/"
          :publishing-function org-html-publish-to-html
@@ -137,8 +140,7 @@
          :html-head-include-default-style nil
          :html-head-include-scripts nil
          ;;:html-head "<meta name='viewport' content='width=device-width, initial-scale=1'>"
-         :html-head-extra (concat "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'><link rel='stylesheet' href='style/main.css'/>" "<etst></etst>")
-         ;;:html-head-extra xtof/org-export-html-head-extra
+         :html-head-extra ,(xtof/org-export-html-head-extra)
          :html-preamble xtof/org-export-preamble
          :html-postamble xtof/org-export-postamble
          :with-toc nil
@@ -152,8 +154,7 @@
          :html-head-include-default-style nil
          :html-head-include-scripts nil
          ;; :html-head "<meta name='viewport' content='width=device-width, initial-scale=1'>"
-         :html-head-extra "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'><link rel='stylesheet' href='../style/main.css'/>"
-;;         :html-head-extra xtof/org-export-html-head-extra
+         :html-head-extra ,(xtof/org-export-html-head-extra)
          :html-preamble xtof/org-export-preamble
          :html-postamble xtof/org-export-postamble
          :with-toc nil
