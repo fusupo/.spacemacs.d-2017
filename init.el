@@ -53,7 +53,8 @@ values."
                  tern-command '("node" "/home/marc/.nvm/versions/node/v6.5.0/bin/tern"))
      markdown
      (org :variables
-          org-enable-bootstrap-support t)
+          org-enable-bootstrap-support t
+          org-projectile-file "TODOS.org")
      scheme
      (shell :variables
             shell-default-height 30
