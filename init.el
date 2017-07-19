@@ -400,6 +400,7 @@ you should place your code here."
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  neotree
+
   (setq neo-create-file-auto-open t)
   (setq neo-modern-sidebar t)
   (setq neo-show-hidden-files t)
