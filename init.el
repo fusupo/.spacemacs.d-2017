@@ -351,52 +351,48 @@ you should place your code here."
      (sqlite . t)))
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  automatic symbol highlight
-  ;; (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
-  ;; (add-hook 'clojure-mode-hook 'spacemacs/toggle-automatic-symbol-highlight-on)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  indent-guide
 
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  indentation
-  ;(indent-guide-global-mode)
-  ;; (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-indent-guide-on)
-  ;; (add-hook 'js2-mode-hook 'spacemacs/toggle-indent-guide-on)
-  (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-highlight-indentation-on)
-  (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-highlight-indentation-current-column-on)
-  (add-hook 'js2-mode-hook 'spacemacs/toggle-highlight-indentation-on)
-  (add-hook 'js2-mode-hook 'spacemacs/toggle-highlight-indentation-current-column-on)
-  (setq js-indent-level 2) ;; indendet JSON 2 spaces
+  (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-indent-guide-on)
+  (add-hook 'js2-mode-hook 'spacemacs/toggle-indent-guide-on)
+  (add-hook 'clojure-mode-hook 'spacemacs/toggle-indent-guide-on)
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  fill column indicator
+
   (setq-default fill-column 80)
   (setq fci-rule-column 80)
   (setq fci-rule-width 1)
   (setq fci-rule-use-dashes t)
   (setq fci-dash-pattern 0.25)
   (setq fci-rule-color "DeepSkyBlue4")
+
   (add-hook 'emacs-lisp-mode-hook 'turn-on-fci-mode)
   (add-hook 'org-mode-hook 'turn-on-fci-mode)
   (add-hook 'js2-mode-hook 'turn-on-fci-mode)
   (add-hook 'clojure-mode-hook 'turn-on-fci-mode)
 
   (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  ;(global-fci-mode)
   (add-hook 'Custom-mode-hook (lambda () (turn-off-fci-mode)))
-
+  
   (defvar sanityinc/fci-mode-suppressed nil)
   (defadvice popup-create (before suppress-fci-mode activate)
     "Suspend fci-mode while popups are visible"
     (set (make-local-variable 'sanityinc/fci-mode-suppressed) fci-mode)
     (when fci-mode
-      (turn-off-fci-mode)))
+      ;;(turn-off-fci-mode)
+      (print "foo")))
   (defadvice popup-delete (after restore-fci-mode activate)
     "Restore fci-mode when all popups have closed"
+    (print "crunch")
     (when (and (not popup-instances) sanityinc/fci-mode-suppressed)
       (setq sanityinc/fci-mode-suppressed nil)
-      (turn-on-fci-mode)))
+      ;;(turn-on-fci-mode)
+      (print "bar")))
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; visual-line-mode 
+  
   (defun my-clojure-visual-line-mode-hook () 
     (visual-line-mode 0)) 
 
