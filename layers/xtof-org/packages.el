@@ -701,7 +701,7 @@
                        (define-key org-agenda-mode-map "N" 'xtof/org-agenda-new)
 
                        ;; (setq org-agenda-files (list xtof/org-directory))
-                       (setq org-agenda-files "~/.spacemacs.d/layers/xtof-org/src/org-agenda-files-list.txt")
+                       ;; (setq org-agenda-files "~/.spacemacs.d/layers/xtof-org/src/org-agenda-files-list.txt")
 
                        ;;;;;;;;;;;;;;;;;;
                        ;; -- REFILE -- ;;
