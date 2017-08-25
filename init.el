@@ -520,8 +520,8 @@ you should place your code here."
                                "~/Dropbox/org/inbox.org"
                                "~/Dropbox/org/js2017.org"
                                "~/Dropbox/org/notes.org"
-                               "~/Dropbox/org/projects.org"
                                "~/Dropbox/org/projects/"
+                               "~/Dropbox/org/schedule.org"
                                ))
 
   ;; (setq org-agenda-text-search-extra-files
