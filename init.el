@@ -346,7 +346,7 @@ you should place your code here."
      (org . t)
      (python . t)
      (ruby . t)
-     (sh . t)
+     (shell . t)
      (sql . nil)
      (sqlite . t)))
 
