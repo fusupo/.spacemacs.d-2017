@@ -1,4 +1,3 @@
-(print "-------- SETUP ORG EXPORT -------")
 (defun xtof/org-export-header-lrg ()
   (concat
    "<header id='header' class='lrg'>"
@@ -10,7 +9,6 @@
    "</header>"))
 
 (defun xtof/org-export-header-sml ()
-  (print "org-export-header-sml")
   (concat
    "<header id='header' class='sml'>"
    "<div>Marc Christophe</div>"
@@ -18,8 +16,7 @@
    "</header>"))
 
 (defun xtof/org-export-preamble (info)
-  (print "org-export-preamble")
-  (cond ((string= (car (plist-get info :title)) "index")
+  (cond ((string= (car (plist-get info :title)) "fusupo.github.io")
          (concat  "<nav id='nav' class='nav-index'>"
                   "<a href= 'about.html '>ABOUT</a>"
                   "</nav>"
@@ -39,7 +36,6 @@
                     ))))
 
 (defun xtof/org-export-disqus-wiget ()
-  (print "org-export-disqus-widget")
   (concat
    "<div id='disqus_thread'></div>"
    "<script>"
@@ -70,7 +66,6 @@
    ))
 
 (defun xtof/org-export-google-analytics-widget ()
-  (print "org-export-google-analytics-widget")
   (concat
    "<script>"
    "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){"
@@ -80,6 +75,30 @@
    "ga('create', 'UA-75904999-1', 'auto');"
    "ga('send', 'pageview');"
    "</script>"))
+
+(defun xtof/momentjs ()
+  "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js'></script>")
+
+(defun xtof/bundlejs (index?)
+  (if index?
+      "<script type='text/javascript' src='./js/build/bundle.js'></script>"
+    "<script type='text/javascript' src='../js/build/bundle.js'></script>"))
+
+(defun xtof/twitter-widget ()
+  (concat
+   "<a href='https://twitter.com/share' class='twitter-share-button' data-via='fusupo' data-size='large'>Tweet</a>"
+   "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
+   )
+  )
+
+(defun xtof/facebook-widget ()
+  (concat
+   "<a class='facebook' href='#'"
+   "onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;\">"
+   "<span class='icon-facebook-rect'>Share</span>"
+   "</a>"
+   )
+  )
 
 (defun xtof/org-export-footer ()
   (print "org-export-footer")
@@ -94,42 +113,50 @@
    "</footer>"))
 
 (defun xtof/org-export-postamble (info)
-  (print "org-export-postamble")
-  (cond ((string= (car (plist-get info :title)) "index")
+  (cond ((string= (car (plist-get info :title)) "fusupo.github.io")
          (concat  "<div>"
                   (xtof/org-export-footer)                    
                   (xtof/org-export-google-analytics-widget)
-                  "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js'></script>"
-                  "<script type='text/javascript' src='js/build/bundle.js'></script>" 
+                  (xtof/momentjs)
+                  (xtof/bundlejs 't)
                   "</div>"))
         ((string= (car (plist-get info :title)) "about")
          (concat  "<div>"
                   (xtof/org-export-footer)                    
                   (xtof/org-export-google-analytics-widget)
-                  "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js'></script>"
-                  "<script type='text/javascript' src='js/build/bundle.js'></script>"
+                  (xtof/momentjs)
+                  (xtof/bundlejs nil)
                   "</div>"))
         (t (concat  "<div>"
-                    "<a href='https://twitter.com/share' class='twitter-share-button' data-via='fusupo' data-size='large'>Tweet</a>"
-                    "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>"
-                    "<a class='facebook' href='#'"
-                    "onclick=\"window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'facebook-share-dialog','width=626,height=436'); return false;\">"
-                    "<span class='icon-facebook-rect'>Share</span>"
-                    "</a>"
+                    (xtof/twitter-widget)
+                    (xtof/facebook-widget)
                     (xtof/org-export-disqus-wiget) 
                     (xtof/org-export-footer)                    
                     (xtof/org-export-google-analytics-widget)
-                    "<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js'></script>"
-                    "<script type='text/javascript' src='../js/build/bundle.js'></script>"
+                    (xtof/momentjs)
+                    (xtof/bundlejs nil)
                     "</div>"))))
 
-(defun xtof/org-export-html-head-extra ()
+(defun xtof/org-export-postamble-projects (info)
+  (concat  "<div>"
+           (xtof/twitter-widget)
+           (xtof/facebook-widget)
+           (xtof/org-export-footer)                    
+           (xtof/org-export-google-analytics-widget)
+           (xtof/momentjs)
+           (xtof/bundlejs nil)
+           "</div>"))
+
+(defun xtof/org-export-html-head-extra (index?)
+  (if index?
+      (print "true")
+    (print "false"))
   (concat
    "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>"
-   "<link rel='stylesheet' href='style/main.css'>"
-   ;; "<link rel='shortcut icon' href='http://cdn.sstatic.net/stackoverflow/img/favicon.ico'>"
-   ;; "<link rel='apple-touch-icon' href='http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png'>"
-   ))
+   (if index?
+       "<link rel='stylesheet' href='./style/main.css'>"
+     "<link rel='stylesheet' href='../style/main.css'>"))
+  )
 
 (setq org-publish-project-alist
       `(("fusupo.github.io-index"
@@ -140,7 +167,7 @@
          :html-head-include-default-style nil
          :html-head-include-scripts nil
          ;;:html-head "<meta name='viewport' content='width=device-width, initial-scale=1'>"
-         :html-head-extra ,(xtof/org-export-html-head-extra)
+         :html-head-extra ,(xtof/org-export-html-head-extra 't)
          :html-preamble xtof/org-export-preamble
          :html-postamble xtof/org-export-postamble
          :with-toc nil
@@ -154,12 +181,23 @@
          :html-head-include-default-style nil
          :html-head-include-scripts nil
          ;; :html-head "<meta name='viewport' content='width=device-width, initial-scale=1'>"
-         :html-head-extra ,(xtof/org-export-html-head-extra)
+         :html-head-extra ,(xtof/org-export-html-head-extra nil)
          :html-preamble xtof/org-export-preamble
          :html-postamble xtof/org-export-postamble
          :with-toc nil
          :section-numbers nil
          )
-        ("fusupo.github.io" :components ("fusupo.github.io-index" "fusupo.github.io-posts")))
-      )
-
+        ("fusupo.github.io-projects"
+         :base-directory "~/Dropbox/org/projects/"
+         :publishing-directory "~/Dropbox/fusupo.github.io/projects/"
+         :publishing-function org-html-publish-to-html
+         :html-head-include-default-style nil
+         :html-head-include-scripts nil
+         ;; :html-head "<meta name='viewport' content='width=device-width, initial-scale=1'>"
+         :html-head-extra ,(xtof/org-export-html-head-extra nil)
+         :html-preamble xtof/org-export-preamble
+         :html-postamble xtof/org-export-postamble-projects
+         :with-toc nil
+         :section-numbers nil
+         )
+        ("fusupo.github.io" :components ("fusupo.github.io-index" "fusupo.github.io-posts" "fusupo.github.io-projects"))))
