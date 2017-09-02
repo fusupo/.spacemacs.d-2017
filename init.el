@@ -558,7 +558,8 @@ you should place your code here."
  '(pos-tip-foreground-color "#FFFFC8")
  '(safe-local-variable-values
    (quote
-    ((cider-cljs-lein-repl . "(do (user/run) (user/browser-repl))")
+    ((cider-cljs-lein-repl . "(do (user/go) (user/cljs-repl))")
+     (cider-cljs-lein-repl . "(do (user/run) (user/browser-repl))")
      (cider-refresh-after-fn . "reloaded.repl/resume")
      (cider-refresh-before-fn . "reloaded.repl/suspend")))))
 
