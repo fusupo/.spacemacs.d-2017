@@ -16,24 +16,40 @@
    "</header>"))
 
 (defun xtof/org-export-preamble (info)
-  (cond ((string= (car (plist-get info :title)) "fusupo.github.io")
-         (concat  "<nav id='nav' class='nav-index'>"
-                  "<a href= 'about.html '>ABOUT</a>"
-                  "</nav>"
-                  (xtof/org-export-header-lrg)
-                  ))
-        ((string= (car (plist-get info :title)) "about")
-         (concat  "<nav id='nav' class='nav-about'>"
-                  "<a href= 'index.html '>HOME</a>"
-                  "</nav>"
-                  (xtof/org-export-header-lrg)
-                  ))
-        (t (concat  "<nav id='nav' class='nav-post'>"
-                    "<a href= \'../index.html \'>HOME</a> | "
-                    "<a href= \'../about.html \'>ABOUT</a>"
-                    "</nav>"
-                    (xtof/org-export-header-sml)
-                    ))))
+  (let ((social (concat
+                 "<div class='col-md-8 col-sm-8 col-xs-8' style='text-align:right; padding-left:5px; padding-right:5px'>"
+                 "<a href='https://twitter.com/fusupo' target='_blank'>Twitter</a> | "
+                 "<a href='https://www.linkedin.com/in/marcpchristophe' target='_blank'>LinkedIn</a> | "
+                 "<a href='https://github.com/fusupo' target='_blank'>Github</a>"
+                 "</div>"
+                 )))
+        (cond ((string= (car (plist-get info :title)) "fusupo.github.io")
+               (concat  "<nav id='nav' class='nav-index row'>"
+                        "<div class='col-md-4 col-sm-4 col-xs-4' style='padding-left:5px; padding-right:5px;'>"
+                        "<a href= 'about.html '>ABOUT</a>"
+                        "</div>"
+                        social
+                        "</nav>"
+                        (xtof/org-export-header-lrg)
+                        ))
+              ((string= (car (plist-get info :title)) "about")
+               (concat  "<nav id='nav' class='nav-about row'>"
+                        "<div class='col-md-4 col-sm-4 col-xs-4' style='padding-left:5px; padding-right:5px;'>"
+                        "<a href= 'index.html '>HOME</a>"
+                        "</div>"
+                        social
+                        "</nav>"
+                        (xtof/org-export-header-lrg)
+                        ))
+              (t (concat  "<nav id='nav' class='nav-post row'>"
+                          "<div class='col-md-4 col-sm-4 col-xs-4' style='padding-left:5px; padding-right:5px;'>"
+                          "<a href= \'../index.html \'>HOME</a> | "
+                          "<a href= \'../about.html \'>ABOUT</a>"
+                          "</div>"
+                          social
+                          "</nav>"
+                          (xtof/org-export-header-sml)
+                          )))))
 
 (defun xtof/org-export-disqus-wiget ()
   (concat
@@ -62,7 +78,7 @@
    "comments powered by Disqus."
    "</a>"
    "</noscript>"
-   "<script id='dsq-count-scr' src='http://fusupogithubio.disqus.com/count.js' async></script>"
+   "<script id='dsq-count-scr' src='https://fusupogithubio.disqus.com/count.js' async></script>"
    ))
 
 (defun xtof/org-export-google-analytics-widget ()
@@ -104,12 +120,7 @@
   (print "org-export-footer")
   (concat
    "<footer id='footer'>"
-   "<p class='small'>© Copyright 2016 Marc Christophe</p>"
-   "<p>"
-   "<a href='https://twitter.com/fusupo' target='_blank'>Twitter</a> | "
-   "<a href='https://www.linkedin.com/in/marcpchristophe' target='_blank'>LinkedIn</a> | "
-   "<a href='https://github.com/fusupo' target='_blank'>Github</a>"
-   "</p>"
+   "<p class='small'>© Marc-P. Christophe, 2017. Unauthorized use and/or duplication of this material without express and written permission from this site’s author and/or owner is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to Marc-P. Christophe with appropriate and specific direction to the original content. </p>"
    "</footer>"))
 
 (defun xtof/org-export-postamble (info)
