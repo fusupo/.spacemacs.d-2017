@@ -4,14 +4,14 @@
    "<a href='/about'>"
    ;;"<img id='avatar' class='2x' src='/assets/images/avatar.png'>"
    "</a>"
-   "<h1>Marc Christophe</h1>"
+   "<h1>fusupo.github.io</h1>"
    "<h4 id='subtitle'></h4>"
    "</header>"))
 
 (defun xtof/org-export-header-sml ()
   (concat
    "<header id='header' class='sml'>"
-   "<div>Marc Christophe</div>"
+   "<div>fusupo.github.io</div>"
    "<div id='subtitle'></div>"
    "</header>"))
 
