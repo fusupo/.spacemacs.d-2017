@@ -509,8 +509,8 @@ you should place your code here."
 
   (setq scroll-margin 0                ;;start scrolling when marker at top/bottom
         scroll-conservatively 100000   ;;marker distance from center (don't jump to center)
-                                               scroll-up-aggressively 0     ; doesn't work in 24.4 todo xxx yyy C-h n scroll-up-line
-                                               scroll-down-aggressively 0
+        scroll-up-aggressively 0       ;:doesn't work in 24.4 todo xxx yyy C-h n scroll-up-line
+        scroll-down-aggressively 0
         scroll-preserve-screen-position 1)
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
