@@ -516,13 +516,15 @@ you should place your code here."
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; org-agenda
 
-  (setq org-agenda-files (list "~/Dropbox/org/archive.org"
-                               "~/Dropbox/org/inbox.org"
-                               "~/Dropbox/org/js2017.org"
-                               "~/Dropbox/org/notes.org"
-                               "~/Dropbox/org/projects/"
-                               "~/Dropbox/org/schedule.org"
-                               ))
+  (setq org-agenda-files (list
+                          "~/Dropbox/org/habits.org"
+                          "~/Dropbox/org/archive.org"
+                          "~/Dropbox/org/inbox.org"
+                          "~/Dropbox/org/js2017.org"
+                          "~/Dropbox/org/notes.org"
+                          "~/Dropbox/org/projects/"
+                          "~/Dropbox/org/schedule.org"
+                          ))
 
   ;; (setq org-agenda-text-search-extra-files
   ;;       '(agenda-archives
