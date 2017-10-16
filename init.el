@@ -375,22 +375,6 @@ you should place your code here."
   (add-hook 'clojure-mode-hook 'turn-on-fci-mode)
 
   (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  (add-hook 'Custom-mode-hook (lambda () (turn-off-fci-mode)))
-  
-  (defvar sanityinc/fci-mode-suppressed nil)
-  (defadvice popup-create (before suppress-fci-mode activate)
-    "Suspend fci-mode while popups are visible"
-    (set (make-local-variable 'sanityinc/fci-mode-suppressed) fci-mode)
-    (when fci-mode
-      ;;(turn-off-fci-mode)
-      (print "foo")))
-  (defadvice popup-delete (after restore-fci-mode activate)
-    "Restore fci-mode when all popups have closed"
-    (print "crunch")
-    (when (and (not popup-instances) sanityinc/fci-mode-suppressed)
-      (setq sanityinc/fci-mode-suppressed nil)
-      ;;(turn-on-fci-mode)
-      (print "bar")))
 
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; visual-line-mode 
