@@ -622,6 +622,11 @@
                    ;; org-use-fast-todo-selection t
                    ;; org-cycle-separator-lines 0
 
+                   (add-hook 'org-mode-hook 'spacemacs/toggle-spelling-checking-on)
+                   (add-hook 'org-mode-hook 'turn-on-fci-mode)
+                   (add-hook 'org-mode-hook '(lambda ()
+                                               (org-indent-mode t)))
+
                    ;; tags
                    (setq org-tag-alist
                          '((:startgroup . nil)
