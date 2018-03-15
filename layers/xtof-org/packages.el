@@ -17,7 +17,7 @@
       '(
         ;; package names go here
         org
-        org-ac
+        ;; org-ac
         ;; org-gcal
         ))
 
@@ -26,14 +26,14 @@
 
 ;; For each package, define a function xtof-org/init-<package-name>
 ;;
-(defun xtof-org/init-org-ac ()
-  "Initialize my package"
-  (use-package org-ac
-    :ensure t
-    :defer t
-    :init (progn
-            (print "load org ac")
-            (org-ac/config-default))))
+;; (defun xtof-org/init-org-ac ()
+;;   "Initialize my package"
+;;   (use-package org-ac
+;;     :ensure t
+;;     :defer t
+;;     :init (progn
+;;             (print "load org ac")
+;;             (org-ac/config-default))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
