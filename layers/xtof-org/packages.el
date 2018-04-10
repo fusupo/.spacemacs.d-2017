@@ -498,10 +498,10 @@
   (progn
     (setq org-agenda-tags-column -136)
     (setq org-agenda-use-tag-inheritance nil)
-    (setq org-agenda-time-grid
-          '((daily today require-timed)
-            "----------------"
-            (600 900 1200 1300 1800 2400)))
+    ;; (setq org-agenda-time-grid
+    ;;       '((daily today require-timed)
+    ;;         "----------------"
+    ;;         (600 900 1200 1300 1800 2400)))
     
     (setq org-agenda-span 2)
     (setq org-agenda-sticky nil)
